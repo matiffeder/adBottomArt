@@ -1,6 +1,5 @@
 # adBottomArt
 
-![](https://media.forgecdn.net/attachments/145/470/Triangle.png)
 ![](https://media.forgecdn.net/attachments/thumbnails/145/473/310/172/adBA.png)
 ![](https://media.forgecdn.net/attachments/thumbnails/145/477/310/172/adBA_GUI.png)
 
@@ -14,7 +13,7 @@
 -   You can hide Chat and Triangle.
     -   Chat: All Chat background set opacity to 0 and Emotion, ChatReset Button set opacity to 0.1.
     -   Triangle: All the Triangle for move frame set opacity to 0.1.  
-        ![Triangle](http://static.curseforge.net/content/images/25/551/Triangle.png "Triangle")
+        ![Triangle](https://media.forgecdn.net/attachments/145/470/Triangle.png "Triangle")
 -   You can hide MainMenu and Experience Bar.
 
 ## Add Your Skin
