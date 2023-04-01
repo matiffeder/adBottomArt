@@ -1,0 +1,650 @@
+<Ui xmlns="http://www.runewaker.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.runewaker.com/UI.xsd">
+	<Script file="adBottomArt.lua"/>
+	<Frame name="adBottomArtFrame" frameStrata="BACKGROUND" frameLevel="-1" parent="UIParent">
+		<Size><AbsDimension x="2048" y="256"/></Size>
+		<Anchors>
+			<Anchor point="BOTTOM"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBG2" file="Interface/AddOns/adBottomArt/Textures/snl/bg2.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="BOTTOMRIGHT" relativeTo="$parent" relativePoint="BOTTOM"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG1" file="Interface/AddOns/adBottomArt/Textures/snl/bg1.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="RIGHT" relativeTo="$parentBG2" relativePoint="LEFT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG3" file="Interface/AddOns/adBottomArt/Textures/snl/bg3.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentBG2" relativePoint="RIGHT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG4" file="Interface/AddOns/adBottomArt/Textures/snl/bg4.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentBG3" relativePoint="RIGHT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG5" file="Interface/AddOns/adBottomArt/Textures/snl/bg5.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="BOTTOMLEFT" relativeTo="$parentBG1" relativePoint="TOPLEFT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG6" file="Interface/AddOns/adBottomArt/Textures/snl/bg6.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentBG5" relativePoint="RIGHT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG7" file="Interface/AddOns/adBottomArt/Textures/snl/bg7.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentBG6" relativePoint="RIGHT"/></Anchors>
+				</Texture>
+				<Texture name="$parentBG8" file="Interface/AddOns/adBottomArt/Textures/snl/bg8.tga">
+					<Size><AbsDimension x="512" y="256"/></Size>
+					<Anchors><Anchor point="LEFT" relativeTo="$parentBG7" relativePoint="RIGHT"/></Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				adBottomArt_OnLoad(this);
+			</OnLoad>
+			<OnEvent>
+				adBottomArt_OnEvent(event, this);
+			</OnEvent>
+		</Scripts>
+	</Frame>
+	<Slider name="adBASliderTemp" orientation="HORIZONTAL" virtual="true">
+		<Size>
+			<AbsDimension x="210" y="16"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentLeft" file="Interface\BagFrame\BagFrame-Slider-Border">
+					<Size>
+						<AbsDimension x="16" y="8"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT"/>
+					</Anchors>
+					<TexCoords left="0" right="0.25" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\BagFrame\BagFrame-Slider-Border">
+					<Size>
+						<AbsDimension x="16" y="8"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT"/>
+					</Anchors>
+					<TexCoords left="0.75" right="1" top="0" bottom="1"/>
+				</Texture>
+				<Texture name="$parentMiddle" file="Interface\BagFrame\BagFrame-Slider-Border">
+					<Size>
+						<AbsDimension x="1" y="8"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT"/>
+						<Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT"/>
+					</Anchors>
+					<TexCoords left="0.25" right="0.75" top="0" bottom="1"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<FontString name="$parentText" inherits="GameFontHighlight" text="x.xx">
+					<Anchors>
+						<Anchor point="BOTTOM" relativePoint="TOP"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<ThumbTexture file="Interface\BagFrame\BagFrame-Slider-Knob">
+			<Size>
+				<AbsDimension x="16" y="16"/>
+			</Size>
+		</ThumbTexture>
+	</Slider>
+	<Frame name="adBottomArtGUI" parent="UIParent" inherits="UICommonFrameTemplate" hidden="true" frameStrata="MEDIUM" frameLevel="1">
+		<Size>
+			<AbsDimension x="337" y="420"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentVersion" inherits="GameFontGray" text="Version">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="-20" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentAddDesc" inherits="GameFontHighlight" text="Scale 1.0 is Best">
+					<Anchors>
+						<Anchor point="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="-105"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parent1600Desc" inherits="GameFontYellow" text="For skin width 1600">
+					<Anchors>
+						<Anchor point="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture file="Interface\AuctionFrame\AuctionSeparate-HorizontalLine">
+					<Size>
+						<AbsDimension x="300" y="4"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture file="Interface\AuctionFrame\AuctionSeparate-HorizontalLine">
+					<Size>
+						<AbsDimension x="300" y="4"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="-70"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<CheckButton name="$parentEnable" inherits="UIPanelCheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="230" y="35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentName" inherits="GameFontNormalLarge" justifyH="LEFT" text="GCF_VISIBLE">
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						adBottomArtSlash(nil, "switch");
+					</OnClick>
+				</Scripts>
+			</CheckButton>
+			<CheckButton name="$parentToggleMenu" inherits="UIPanelCheckButtonTemplate">
+				<Size>
+					<AbsDimension x="25" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="25" y="45"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="adBottomArtGUIHideDesc" inherits="GameFontHighlight" justifyH="LEFT" text="Hide Frames">
+							<Anchors>
+								<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="Hide MenuFrame">
+							<FontHeight><AbsValue val="11"/></FontHeight>
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						if this:IsChecked() then
+							MainMenuFrame:Hide(); ExperienceFrame:Hide();
+							adBASet["ToggleMenu"] = true;
+						else
+							MainMenuFrame:Show(); ExperienceFrame:Show();
+							adBASet["ToggleMenu"] = false;
+						end
+					</OnClick>
+				</Scripts>
+			</CheckButton>
+			<CheckButton name="$parentToggleChat" inherits="UIPanelCheckButtonTemplate">
+				<Size>
+					<AbsDimension x="25" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="110" y="45"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="Hide ChatFrame">
+							<FontHeight><AbsValue val="11"/></FontHeight>
+							<Anchors>
+								<Anchor point="LEFT" relativePoint="RIGHT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+						if this:IsChecked() then
+							for i = 1, 8 do
+								getglobal("ChatFrame"..i):SetBackdropTileAlpha(0);
+								getglobal("ChatFrame"..i):SetBackdropEdgeAlpha(0);
+								getglobal("ChatFrame"..i.."ResizeButton"):SetAlpha(0.1);
+							end
+							ChatFrameEmoteButton:SetAlpha(0.1); ChatFrameRestoreButton:SetAlpha(0.1); ChatFrameChannelChangeResizeButton:SetAlpha(0.1);
+							MainActionBarFrameButtonEX:SetAlpha(0.1); BottomActionBarFrameButtonEX:SetAlpha(0.1); LeftActionBarFrameButtonEX:SetAlpha(0.1); RightActionBarFrameButtonEX:SetAlpha(0.1);
+							adBASet["ToggleChat"] = true;
+						else
+							for i = 1, 8 do
+								getglobal("ChatFrame"..i):SetBackdropTileAlpha(0.6);
+								getglobal("ChatFrame"..i):SetBackdropEdgeAlpha(0.6);
+								getglobal("ChatFrame"..i.."ResizeButton"):SetAlpha(1);
+							end
+							ChatFrameEmoteButton:SetAlpha(1); ChatFrameRestoreButton:SetAlpha(1); ChatFrameChannelChangeResizeButton:SetAlpha(1);
+							MainActionBarFrameButtonEX:SetAlpha(1); BottomActionBarFrameButtonEX:SetAlpha(1); LeftActionBarFrameButtonEX:SetAlpha(1); RightActionBarFrameButtonEX:SetAlpha(1);
+							adBASet["ToggleChat"] = false;
+						end
+					</OnClick>
+				</Scripts>
+			</CheckButton>
+			<Slider name="$parentWidth" inherits="adBASliderTemp">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="100"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						this:SetValueStepMode("INT");
+						this:SetMinMaxValues(64, 512);
+						this:SetValue(512);
+					</OnLoad>
+					<OnValueChanged>
+						local value = this:GetValue();
+						adBottomArtGUIWidthText:SetText("|cffFFD200"..GCF_TEXT_WIDTH.."|r "..value*4);
+						adBottomArtSetWidth(value);
+						adBASet["ArtWidth"] = tonumber(value);
+					</OnValueChanged>
+					<OnMouseWheel>
+						delta = delta / math.abs(delta);
+						local x = this:GetValue() + delta;
+						this:SetValue(x);
+					</OnMouseWheel>
+				</Scripts>
+			</Slider>
+			<Slider name="$parentHeight" inherits="adBASliderTemp">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="130"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						this:SetValueStepMode("INT");
+						this:SetMinMaxValues(32, 1080);
+						this:SetValue(256);
+					</OnLoad>
+					<OnValueChanged>
+						local value = this:GetValue();
+						adBottomArtGUIHeightText:SetText("|cffFFD200"..GCF_TEXT_HIGHT.."|r "..value);
+						adBottomArtSetHeight(value);
+						adBASet["ArtHeight"] = tonumber(value);
+					</OnValueChanged>
+					<OnMouseWheel>
+						delta = delta / math.abs(delta);
+						local x = this:GetValue() + delta;
+						this:SetValue(x);
+					</OnMouseWheel>
+				</Scripts>
+			</Slider>
+			<Slider name="$parentScale" inherits="adBASliderTemp">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="160"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						this:SetValueStepMode("FLOAT");
+						this:SetMinMaxValues(0.5, 5);
+						this:SetValue(1);
+					</OnLoad>
+					<OnValueChanged>
+						local value = this:GetValue();
+						value = string.format("%.1f", value);
+						adBottomArtGUIScaleText:SetText("|cffFFD200"..GCF_TEXT_SCALE.."|r "..value);
+						adBottomArtFrame:SetScale(value);
+						adBASet["ArtScale"] = tonumber(value);
+					</OnValueChanged>
+					<OnMouseWheel>
+						delta = delta / math.abs(delta);
+						local x = this:GetValue() + delta * .1;
+						this:SetValue(x);
+					</OnMouseWheel>
+				</Scripts>
+			</Slider>
+			<Slider name="$parentAlpha" inherits="adBASliderTemp">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="190"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						this:SetValueStepMode("FLOAT");
+						this:SetMinMaxValues(0, 1);
+						this:SetValue(0.6);
+					</OnLoad>
+					<OnValueChanged>
+						local value = this:GetValue();
+						value = string.format("%.2f", value);
+						adBottomArtGUIAlphaText:SetText("|cffFFD200"..UI_COLORPICKER_ALPHA.."|r "..value);
+						adBottomArtFrame:SetAlpha(value);
+						adBASet["ArtAlpha"] = tonumber(value);
+					</OnValueChanged>
+					<OnMouseWheel>
+						delta = delta / math.abs(delta);
+						local x = this:GetValue() + delta * .01;
+						this:SetValue(x);
+					</OnMouseWheel>
+				</Scripts>
+			</Slider>
+			<EditBox name="$parentXOffset" inherits="UIPanelEditBoxTemplate">
+				<Size>
+					<AbsDimension x="60" y="18"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="130" y="210"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentName" inherits="GameFontNormal" justifyH="RIGHT" text="X">
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="-70" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnEnterPressed>
+						adBottomArtSlash(nil, "xoffset "..adBottomArtGUIXOffset:GetText());
+					</OnEnterPressed>
+					<OnEscapePressed>
+						this:ClearFocus(); 
+					</OnEscapePressed>
+					<OnTabPressed>
+						adBottomArtGUIYOffset:SetFocus();
+					</OnTabPressed>
+				</Scripts>
+			</EditBox>
+			<EditBox name="$parentYOffset" inherits="UIPanelEditBoxTemplate">
+				<Size>
+					<AbsDimension x="60" y="18"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="130" y="240"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentName" inherits="GameFontNormal" justifyH="RIGHT" text="Y">
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="-70" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentMinus" inherits="GameFontNormal" justifyH="LEFT" text="-">
+							<Anchors>
+								<Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnEnterPressed>
+						adBottomArtSlash(nil, "yoffset "..adBottomArtGUIYOffset:GetText());
+					</OnEnterPressed>
+					<OnEscapePressed>
+						this:ClearFocus(); 
+					</OnEscapePressed>
+					<OnTabPressed>
+						adBottomArtGUIXOffset:SetFocus();
+					</OnTabPressed>
+				</Scripts>
+			</EditBox>
+			<Frame name="$parentDownMenu" inherits="UIDropDownMenuTemplate">
+				<Size>
+					<AbsDimension x="88" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="156" y="270"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentName" inherits="GameFontNormal" justifyH="RIGHT" text="Skin">
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="-97" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnLoad>
+						adBottomArtDownMenu_OnLoad();
+					</OnLoad>
+					<OnShow>
+						UIDropDownMenu_Initialize(this, adBottomArtDownMenu_OnShow);
+						if type(adBASet["ArtName"])=="number" then
+							UIDropDownMenu_SetSelectedID(adBottomArtGUIDownMenu, adBASet["ArtName"]+1);
+						elseif adBASet["ArtName"]=="snl" then
+							UIDropDownMenu_SetSelectedID(adBottomArtGUIDownMenu, 1);
+						end
+					</OnShow>
+				</Scripts>
+			</Frame>
+			<Button name="$parentSwitch">
+				<NormalTexture file="interface\CharacterFrame\EquipSwapButton-Normal"/>
+				<PushedTexture file="interface\CharacterFrame\EquipSwapButton-Depress"/>
+				<HighlightTexture file="interface\CharacterFrame\EquipSwapButton-Normal" alphaMode="ADD"/>
+				<Size><AbsDimension x="20" y="20"/></Size>
+				<Anchors>
+					<Anchor point="RIGHT" relativePoint="LEFT" relativeTo="$parentDownMenu">
+						<Offset>
+							<AbsDimension x="-5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						adBottomArtSwitch_Click();
+					</OnClick>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_BOTTOM", 0, 0);
+						GameTooltip:SetText(adBALang["SwitchSkin"]);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="$parentAutoWidthName" inherits="UIPanelButtonTemplate" text="AutoWidth">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="-100" y="-75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						adBottomArtSlash(nil, "autow");
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentAutoHeightName" inherits="UIPanelButtonTemplate" text="AutoHeight">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="-75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						adBottomArtSlash(nil, "autoh");
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentChatHeightName" inherits="UIPanelButtonTemplate" text="ChatHeight">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="100" y="-75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						adBottomArtSlash(nil, "chath");
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parent1600CenterName" inherits="UIPanelButtonTemplate" text="ToCenter">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="-100" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_BOTTOMRIGHT");
+						GameTooltip:SetText(adBALang["1600Desc"], 1, 1, 0);
+						GameTooltip:AddLine(adBALang["1600CenterDesc"]);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+					<OnClick>
+						adBottomArtSlash(nil, "16center");
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parent1600ScaleName" inherits="UIPanelButtonTemplate" text="AutoScale">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_BOTTOMRIGHT");
+						GameTooltip:SetText(adBALang["1600Desc"], 1, 1, 0);
+						GameTooltip:AddLine(adBALang["1600ScaleDesc"]);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+					<OnClick>
+						adBottomArtSlash(nil, "16scale");
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parent1600ChatHeightName" inherits="UIPanelButtonTemplate" text="ChatHeight">
+				<Size>
+					<AbsDimension x="86" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="100" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						adBottomArtSlash(nil, "16chath");
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnShow>
+				adBottomArtTexts(this);
+			</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

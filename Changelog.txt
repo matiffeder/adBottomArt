@@ -1,0 +1,125 @@
+==========================================================================
+adBottomArt v0.6
+--------------------------------------------------------------------------
+* Added setting for set 1600 skin to chat height.
+* Added support for XBar Addon Management.
+* Fixed text of drop menu.
+* Changed loading time.
+* Code enhanced.
+* Changed color of loaded text and translated it.
+
+
+==========================================================================
+adBottomArt v0.51
+--------------------------------------------------------------------------
+* Fixed a bug when you use UI Scale in game.
+* Auto Width will also set X offset to 0.
+
+
+==========================================================================
+adBottomArt v0.5
+--------------------------------------------------------------------------
+* Fixed the function to set offset.
+* Changed min value in width.
+* Added minus in front of Y offset Editbox.
+
+
+==========================================================================
+adBottomArt v0.4
+--------------------------------------------------------------------------
+* Added quick switch skin button.
+* Added button to set skin height with chat height.
+* Changed width, height, scale and transparency EditBox into Slider.
+* Show width text as whole skin width.
+* Get back BG5~8 skin support make it compatible with other skins.
+* Deleted 1/4 screen height button.
+* Simplify code.
+
+
+==========================================================================
+adBottomArt v0.32
+--------------------------------------------------------------------------
+* Found framelevel=-1, so adBA is the lowest level now.
+
+
+==========================================================================
+adBottomArt v0.31
+--------------------------------------------------------------------------
+* Change something for Ctrl+Z function in RoM.
+
+
+==========================================================================
+adBottomArt v0.3
+--------------------------------------------------------------------------
+* Added a function to hide "MainMenu" and "Experience Bar".
+* Added a function to hide "Chat background" and "the Triangle for move frame".
+* Added auto settings for skins with 1600 width.
+* Fixed the bug when you use Tab to change Editbox focus.
+* Fixed OnShow bug of drop menu.
+* Merged 6 "Set" to one button.
+* Changed config frame.
+
+
+==========================================================================
+adBottomArt v0.2
+--------------------------------------------------------------------------
+* Auto load your skin, you don't need to change any codes.
+* Setted skin at center.
+* Added X offset setting, X is start from center.
+* Added Enable check button.
+* Changed auto set for height.
+* Added a button for set the art height to 1/4 screen height.
+* Added two skins.
+
+
+==========================================================================
+adBottomArt v0.1
+--------------------------------------------------------------------------
+* Support translation.
+* Added Y offset setting.
+* Added skin set in Configuration.
+* Added auto set for height.
+* Deleted AutoScale.
+* Update editbox texts when you use AutoWidth, slash command.
+* Press enter to set, not ClearFocus.
+* Tab or Shift + Tab to change editbox.
+* Fixed the editbox width, it will not cover Set button.
+* Added a tooltip on editbox.
+* Changed some offset in Configuration.
+
+
+==========================================================================
+Sorry, I don't want use Subversion to update.
+==========================================================================
+------------------------------------------------------------------------
+r3 | anahel | 2009-04-09 11:42:09 +0000 (Thu, 09 Apr 2009) | 1 line
+Changed paths:
+   M /trunk/adBottomArt.lua
+   M /trunk/adBottomArt.toc
+   A /trunk/adBottomArtConfig.xml
+
+added a config window
+------------------------------------------------------------------------
+r2 | anahel | 2009-04-08 22:08:05 +0000 (Wed, 08 Apr 2009) | 2 lines
+Changed paths:
+   A /trunk/Textures
+   A /trunk/Textures/snl
+   A /trunk/Textures/snl/bg1.tga
+   A /trunk/Textures/snl/bg2.tga
+   A /trunk/Textures/snl/bg3.tga
+   A /trunk/Textures/snl/bg4.tga
+   A /trunk/adBottomArt.lua
+   A /trunk/adBottomArt.toc
+   A /trunk/adBottomArt.xml
+
+Initial release as repository
+Added autoscale function
+------------------------------------------------------------------------
+r1 | root | 2009-04-08 22:03:29 +0000 (Wed, 08 Apr 2009) | 1 line
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+
+"adbottomart/mainline: Initial Import"
+------------------------------------------------------------------------

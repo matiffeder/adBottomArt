@@ -1,0 +1,31 @@
+﻿==========================================================================
+   How to add your skin
+--------------------------------------------------------------------------
+1. Download skin from anywhere.
+2. Put your skin in ""...\Interface\Addons\adBottomArt\Textures"
+3. Change the skin folder name to a continuous number. Ex: 1, 2, 3, 4, 5..., not 1, 3, 5....
+4. Copy "...\Interface\Addons\adBottomArt\Textures\1\loadfile.lua" to your skin folder.
+5. Play game! You will find your skin in drop menu.
+6. If you don't use above way, you can also set skin by "/adba skin XXX". 
+
+  * The max skins I limit at 30, if anyone want, I can change it to any number.
+  * Your textures folder: 
+   - Interface
+         - AddOns
+               - adBottomArt
+                     - Textures
+                           + snl
+                           + 1
+                           + 2
+                           - 3
+                               · bg1.tga
+                               · bg2.tga
+                               · bg3.tga
+                               · bg4.tga
+                               · loadfile.lua
+                           + 4
+                           + 5
+                           ......
+
+
+==========================================================================

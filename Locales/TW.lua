@@ -1,0 +1,20 @@
+
+adBALang = {
+	["HideDesc"]="隱藏遊戲介面......",
+	["ToggleMenu"]="主選單",
+	["ToggleChat"]="聊天視窗和三角形",
+	["Skin"]="面板",
+	["SwitchSkin"]="快速更換面板",
+	["AddDesc"]="自動調整時面板的最佳比例為 1.0",
+	["AutoWidth"]="自動調整寬度",
+	["AutoHeight"]="自動調整高度",
+	["ChatHeight"]="聊天視窗高度",
+	["1600Desc"]="面板寬 1600 時使用",
+	["1600Center"]="置中",
+	["1600CenterDesc"]="如果你使用「自動調整寬度」後不想再變更寬度，可以使用這個按鈕將面板置中。",
+	["1600Scale"]="自動調整比例",
+	["1600ScaleDesc"]="依螢幕自動調整長寬\n（同時更改水平位置）",
+	["XAddonTip1"]="點擊左鍵開啟設定介面",
+	["XAddonTip2"]="右鍵開關 ExtraTip",
+	["Load"]="|cffEEABABadBottomArt %s|r 已讀取，你有 |cffEEABAB%s|r 面板，輸入 |cffEEABAB/adba|r 開啟設定介面",
+};

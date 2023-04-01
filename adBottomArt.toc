@@ -1,0 +1,10 @@
+## Title: adBottomArt
+## Notes: Adds an artwork at the bottom of the screen.
+## Author: KranKhaft
+## SavedVariables: adSettings
+## X-Curse-Packaged-Version: r3
+## X-Curse-Project-Name: adBottomArt
+## X-Curse-Project-ID: adbottomart
+## X-Curse-Repository-ID: rom/adbottomart/mainline
+
+adBottomArt.xml

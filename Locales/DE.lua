@@ -1,0 +1,20 @@
+
+adBALang = {
+	["HideDesc"]="Hide Frames......",
+	["ToggleMenu"]="MainMenu",
+	["ToggleChat"]="Chat & Triangle",
+	["Skin"]="Hintergrund",
+	["SwitchSkin"]="Quick Switch Skin",
+	["AddDesc"]="The best scale when you use auto setting is 1.0.",
+	["AutoWidth"]="Auto Breite",
+	["AutoHeight"]="Auto Höhe",
+	["ChatHeight"]="Chat Höhe",
+	["1600Desc"]="For skin width 1600",
+	["1600Center"]="To Center",
+	["1600CenterDesc"]="After you clicked AutoBreite, and don't want to change width again, you can use the button to set the skin to center.",
+	["1600Scale"]="Auto Maßstab",
+	["1600ScaleDesc"]="Auto set width/height to fit screen.\n(It will change X offset.)",
+	["XAddonTip1"]="Left-Click to open GUI.",
+	["XAddonTip2"]="Right-Click to toggle ExtraTip.",
+	["Load"]="|cffEEABABadBottomArt %s|r geladen, you have |cffEEABAB%s|r skins, |cffEEABAB/adba|r eingeben um Einstellungen zu öffnen.",
+};
